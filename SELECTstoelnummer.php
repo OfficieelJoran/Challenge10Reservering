@@ -1,10 +1,9 @@
 <?php
-
+include 'db.php';
 // query schrijven voor alle producten
 $sql = 'SELECT id, stoelnummer FROM stoelnummers';
 
-
-$stoelnummer = $_POST['stoelnummer'];
+$result = mysqli_query($conn, $sql);
 
 
 ?>
