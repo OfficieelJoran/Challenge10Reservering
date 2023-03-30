@@ -1,7 +1,6 @@
 <?php
 include 'db.php';
 
-$sql = 'SELECT id, stoelnummer FROM stoelnummers';
 
 $result = mysqli_query($conn, $sql);
 

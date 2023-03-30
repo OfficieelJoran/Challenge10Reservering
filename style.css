@@ -1,15 +1,60 @@
+/* /* Set the background color of the page */
 body {
-
-    Margin:0;
-    padding: 0;
-    
+    background-color: #e6e6e6;
 }
 
+/* / Style the header */
+h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* / Style the paragraph / */
+p {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* / Style the label / */
+label {
+    font-size: 24px;
+    margin-top: 20px;
+    display: block;
+}
+
+/* / Style the seats / */
 .seat {
     display: inline-block;
     margin: 10px;
+    position: relative;
 }
 
+/* / Style the seat images / */
+.seat img {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
+
+/* / Style the seat images based on their status / */
+.seat img[data-status="beschikbaar"] {
+    background-color: #0f0;
+}
+
+.seat img[data-status="gereserveerd"] {
+    background-color: #ff0;
+}
+
+.seat img[data-status="bezet"] {
+    background-color: #f00;
+}
+
+/* / Style the seat information box / */
 #seat-info {
     position: fixed;
     top: 0;
@@ -18,9 +63,45 @@ body {
     height: 100%;
     background-color: #fff;
     display: none;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
-.submitbutton {
-    width: 5vw;
-    height: 3vh;
+#seat-info h2 {
+    font-size: 28px;
+    margin-top: 0;
 }
+
+#seat-info p {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+/* / Add a background color to the seat information box based on the seat status */ */
+#seat-info[data-status="beschikbaar"] {
+    background-color: #0f0;
+}
+
+#seat-info[data-status="gereserveerd"] {
+    background-color: #ff0;
+}
+
+#seat-info[data-status="bezet"] {
+    background-color: #f00;
+}
+
+
+    .submitbutton {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .submitbutton:hover {
+        background-color: #45a049;
+    }

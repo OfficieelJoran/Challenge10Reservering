@@ -30,9 +30,8 @@ include 'SELECTstoelnummer.php';
         $stoelnummer = $row['stoelnummer'];
         $stoelnummerid = $row['id'];
         echo '<div class="seat">';
-        echo '<input type="hidden" name="stoelnummer[]" value="' . $stoelnummer . '">';
-        echo '<input type="hidden" name="id[]" value="' . $stoelnummerid . '">';
-        echo '<img src="images/groenestoel.png" alt="Stoel" data-stoelnummer="' . $stoelnummer . '">';
+        echo '<input type="hidden" name="stoelnummerid" value="' . $row['id'] . '">';
+        echo '<img src="images/groenestoel.png" alt="Stoel" data-stoelnummer="' . $stoelnummer . '" data-stoelid="'.$stoelnummerid.'">';
         echo '</div>';
     }
     ?>
@@ -52,7 +51,7 @@ include 'SELECTstoelnummer.php';
                 <input type="number" name="phonenumber" required><br>
                 zeker?<br>
                 Ja <input type='checkbox' name="occupied" value="1" required><br>
-                <input type="hidden" name="stoelnummerid" value="<?php echo $stoelnummerid ?>">
+                <input id="stoelnrid" type="hidden" name="stoelnummerid" value="">
 
                 <button type="submit" name="submit" Placeholder="Reserveren" class="submitbutton">Reserveer</button>
 
@@ -73,7 +72,7 @@ include 'SELECTstoelnummer.php';
                 document.querySelector('#seat-number').textContent = 'Stoelnummer: ' + seatNumber;
                 document.querySelector('#seat-status').textContent = 'Status: beschikbaar';
                 document.querySelector('#seat-info').style.display = 'block';
-
+                document.querySelector('#stoelnrid').value=this.dataset.stoelid;
                 
 
             });
